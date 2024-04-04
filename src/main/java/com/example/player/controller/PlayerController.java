@@ -1,12 +1,11 @@
 package com.example.player.controller;
 
-import com.example.player.model.Player;
-import com.example.player.service.PlayerH2Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import java.util.*;
 
-import java.util.ArrayList;
+import com.example.player.service.PlayerH2Service;
+import com.example.player.model.Player;
 
 @RestController
 public class PlayerController {
@@ -25,7 +24,6 @@ public class PlayerController {
     }
 
     @PostMapping("/players")
-    @ResponseStatus(HttpStatus.CREATED)
     public Player addPlayer(@RequestBody Player player) {
         return playerService.addPlayer(player);
     }
@@ -36,8 +34,8 @@ public class PlayerController {
     }
 
     @DeleteMapping("/players/{playerId}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletePlayer(@PathVariable("playerId") int playerId) {
+    public void deletePlayer(@PathVariable int playerId) {
         playerService.deletePlayer(playerId);
     }
+
 }
