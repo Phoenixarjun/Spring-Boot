@@ -1,6 +1,7 @@
 package com.example.player.model;
 
 public class Player {
+
     private int playerId;
     private String playerName;
     private int jerseyNumber;
@@ -44,4 +45,5 @@ public class Player {
     public void setRole(String role) {
         this.role = role;
     }
+
 }
