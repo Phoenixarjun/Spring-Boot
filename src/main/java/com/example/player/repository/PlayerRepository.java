@@ -1,10 +1,11 @@
 package com.example.player.repository;
 
+import java.util.*;
+
 import com.example.player.model.Player;
 
-import java.util.ArrayList;
-
 public interface PlayerRepository {
+
     ArrayList<Player> getPlayers();
 
     Player getPlayerById(int playerId);
